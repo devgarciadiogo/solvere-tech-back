@@ -1,5 +1,3 @@
-// src/routes/pessoas.js
-
 const express = require("express");
 const router = express.Router();
 const Pessoa = require("../models/pessoas");

@@ -1,5 +1,3 @@
-// src/models/pessoa.js
-
 const db = require("../config/database");
 
 const Pessoas = {
@@ -28,6 +26,9 @@ const Pessoas = {
       "UPDATE pessoas SET nome = $1, telefone = $2, email = $3, senha = $4 WHERE id = $5 RETURNING *",
       [nome, telefone, email, senha, id]
     );
+    if (res.rowCount === 0) {
+      throw new Error("Pessoa não encontrada");
+    }
     return res.rows[0];
   },
 

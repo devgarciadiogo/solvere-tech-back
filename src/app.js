@@ -25,5 +25,3 @@ app.use("/api/pessoas", pessoasRoutes);
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
-
-console.log(olá);
